@@ -6,3 +6,114 @@ Medium green: #55c57a
 Dark green: #28b485
 
 */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.7;
+    /* By putting 1.7 without a unit of measurement, 
+    we're telling CSS to take the default line height and
+    multiply it by 1.7. */
+    color: #777;
+    padding: 30px;
+}
+
+.header {
+    position: relative;
+    height: 95vh;
+    /* At any point, the height of this element should
+    be 95% of the viewport height. */
+    background-image: linear-gradient(
+        to right bottom, 
+        rgba(126, 213, 111, 0.801) , 
+        rgba(40, 180, 133, 0.808)), 
+        url(../img/hero.jpg);
+    background-size: cover;
+    /* whatever the width of the viewport, 
+    it will try to fit the image-orientation: inside of it. */
+    background-position: top;
+    /* No matter the size of the viewport, the image
+    stays at the top of the page. */
+    clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+}
+
+.logo-box {
+    position: absolute;
+    top: 40px;
+    left: 40px;
+}
+
+.logo {
+    height: 35px;
+}
+
+.text-box {
+    position: absolute;
+    top: 44%;
+    left: 50%;    
+    transform: translate(-50%, -50%);
+}
+
+.heading-primary {
+    color: #fff;
+    text-transform: uppercase;
+
+    backface-visibility: hidden;
+    /* determines if the backface of the element is viewable or not */
+}
+
+.heading-primary-main {
+    display: block;
+    font-size: 60px;
+    font-weight: 400;
+    letter-spacing: 35px;
+
+    animation: moveInLeft .5s ease-in;   
+}
+
+.heading-primary-sub {
+    display: block;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 17.4px;
+
+    animation: moveInRight .5s ease-in;
+}
+ @keyframes moveInLeft {
+     0% {
+        opacity: 0;
+        transform: translateX(-80px);
+     }
+
+     80% {
+        transform: translateX(10px);
+     }
+
+     100% {
+        opacity: 1;
+        transform: translateX(0);
+     }
+ }
+
+ @keyframes moveInRight {
+    0% {
+       opacity: 0;
+       transform: translateX(80px);
+    }
+
+    80% {
+       transform: translateX(-10px);
+    }
+
+    100% {
+       opacity: 1;
+       transform: translateX(0);
+    }
+}
